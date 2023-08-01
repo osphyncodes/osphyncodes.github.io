@@ -28,7 +28,8 @@ const usersDatabase = [{
 
   const tcdDatabase = JSON.parse(localStorage.getItem('tcdDatabase')) || ['08/Mar/2023','29/Apr/2023']
 
-
+  localStorage.setItem('tcdDataBase',JSON.stringify(tcDatabase));
+  
   const msgbox = function (message, title) {
     const confTitleElement = document.querySelector('.js-conf-title')
     const confMessageElement = document.querySelector('.js-conf-message')
