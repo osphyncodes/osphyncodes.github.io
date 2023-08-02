@@ -10,6 +10,9 @@ let row;
 
 const getSessionName = function() {
   const getId = TC.NewSession.valSessionID.innerHTML
+ // const getId = TC.SessionHome.valSessionID.innerHTML
+
+
   for (let index = 0; index < numberOfSessionDB.length; index++) {
     const value = numberOfSessionDB[index];
     if (getId == value.id) {
