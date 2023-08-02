@@ -8,8 +8,8 @@ let sessionName;
 let SessionIndex;
 let row;
 
-const getSessionName = function() {
-  const getId = TC.NewSession.valSessionID.innerHTML
+const getSessionName = function(getId) {
+  //const getId = TC.NewSession.valSessionID.innerHTML
  // const getId = TC.SessionHome.valSessionID.innerHTML
 
 
@@ -40,7 +40,7 @@ Myform.addEventListener('submit', (element) => {
 
   element.preventDefault();
 
-  getSessionName();
+  getSessionName(TC.SessionHome.valIdStore.innerHTML || TC.NewSession.valSessionID);
 
   const name = TC.NewSession.frmSignInForm.FormFieldNames.Name
   const age = TC.NewSession.frmSignInForm.FormFieldNames.Age

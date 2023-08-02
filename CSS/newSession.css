@@ -341,11 +341,23 @@ font-size: 20px;
   } 
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1000px) {
   .teen-search {
     left: 20;
     right: 20;
   } 
+
+  .bottom-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .session-date-list {
+    display: none;
+  }
+
+  .session-details {
+    right: 5;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -381,5 +393,17 @@ font-size: 20px;
 
   .new-session-teens-table {
     display: none;
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+
+  .session-date-list {
+    display: none;
+  }
+
+  .session-details {
+    right: 5;
   }
 }
