@@ -52,7 +52,6 @@ Myform.addEventListener('submit', (element) => {
   const reasonOfAttendance = TC.NewSession.frmSignInForm.FormFieldNames.ReasonOfAttendance
 
 
-
   const tcNum = JSON.parse(localStorage.getItem('SearchedTCNum'))
 
 
