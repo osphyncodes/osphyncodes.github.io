@@ -18,7 +18,11 @@ const getSessionName = function(getId) {
     if (getId == value.id) {
       sessionName = value.name
     } 
+
+
   }
+
+  console.log(sessionName)
 
   let Checking;
 
@@ -40,7 +44,7 @@ Myform.addEventListener('submit', (element) => {
 
   element.preventDefault();
 
-  getSessionName(TC.SessionHome.valIdStore.innerHTML || TC.NewSession.valSessionID);
+  getSessionName(TC.SessionHome.valIdStore.innerHTML || TC.NewSession.valSessionID.innerHTML);
 
   const name = TC.NewSession.frmSignInForm.FormFieldNames.Name
   const age = TC.NewSession.frmSignInForm.FormFieldNames.Age
@@ -75,12 +79,17 @@ Myform.addEventListener('submit', (element) => {
 
   const ckDB =   signInDatabase[SessionIndex][sessionName]
 
+
   let checks;
-  for (let index = 0; index < ckDB.length; index++) {
-    const value = ckDB[index];
-    if (value.tcNumber == tcNum) {
-      checks = 125;
-      break;
+
+
+  if(ckDB.length > 0) {
+    for (let index = 0; index < ckDB.length; index++) {
+      const value = ckDB[index];
+      if (value.tcNumber == tcNum) {
+        checks = 125;
+        break;
+      }
     }
   }
 

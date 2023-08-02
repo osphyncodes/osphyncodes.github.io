@@ -95,6 +95,8 @@ const signInDatabase = JSON.parse(localStorage.getItem('signInDatabase')) || [];
       localStorage.setItem('numberOfSessionDB',JSON.stringify(numberOfSessionDB));
 
       TC.NewSession.valSessionID.innerHTML = sessionId
+      TC.SessionHome.valIdStore.innerHTML = sessionId
+      
       TC.NewSession.valTeenClubDate.innerHTML = customDateFormat(sessionDate)
 
       // here we push sessions object into sign in database

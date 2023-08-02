@@ -105,7 +105,7 @@ let SessionIndexx;
 
 sessionCount();
 
-//if (numEl !== 0) {
+if (numEl !== 0) {
   const refreshHomePage = function() {
     
 
@@ -193,7 +193,7 @@ sessionCount();
   }
 
 refreshHomePage();
-//}
+}
 
 
 const ConfMSG = function(Message = '', dFunction = () => {}) {
