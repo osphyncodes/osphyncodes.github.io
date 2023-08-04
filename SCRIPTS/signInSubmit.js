@@ -22,8 +22,6 @@ const getSessionName = function(getId) {
 
   }
 
-  console.log(sessionName)
-
   let Checking;
 
   for (let index = 0; index < signInDatabase.length; index++) {

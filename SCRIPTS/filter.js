@@ -93,7 +93,8 @@ const setSessionContainer = document.querySelector('.set-session-container')
   refreshFinishBtn.addEventListener('click', () => {
     newSessionContainer.style.display = 'none';
     sessionHomePage.style.display = 'block'
-    openHtmlFile('/HTML/homePage.html');
+    SessionHomeLoad();
+    //openHtmlFile('/HTML/homePage.html');
   })
 
 

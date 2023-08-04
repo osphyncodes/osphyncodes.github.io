@@ -66,7 +66,7 @@ function handleClick(index) {
   }
 
   TC.SessionHome.valIdStore.innerHTML = ssHomeSessionId
-  refreshHomePage() 
+  refreshHomePage();
 }
 
 SessionHomeLoad();
@@ -105,7 +105,6 @@ let SessionIndexx;
 
 sessionCount();
 
-if (numEl !== 0) {
   const refreshHomePage = function() {
     
 
@@ -128,10 +127,13 @@ if (numEl !== 0) {
   
       getSessionName(TC.SessionHome.valIdStore.innerHTML)
 
-      ckDB =   signInDatabase[SessionIndex][sessionName]; 
+  //if (sessionName) {
+    if(sessionName !== undefined){
+      ckDB =   signInDatabase[SessionIndex][sessionName]
+    } else {
+      ckDB =[]
+    }
     
-
-
     // getting values;
     teenAttended = ckDB.length
     
@@ -193,7 +195,7 @@ if (numEl !== 0) {
   }
 
 refreshHomePage();
-}
+//}
 
 
 const ConfMSG = function(Message = '', dFunction = () => {}) {
@@ -243,8 +245,6 @@ const deleteSession = function() {
   localStorage.setItem('numberOfSessionDB', JSON.stringify(numberOfSessionDB))
 
   SessionHomeLoad();
-
-  console.log(SessionIndex)
 
   popMessage('Session has been deleted successfully!')
 }

@@ -16,7 +16,6 @@ function checkCredentials() {
 
     if(value.Username === username && value.Password === password) {
       checkUser = true
-      console.log(checkUser)
       break
     }
   }
