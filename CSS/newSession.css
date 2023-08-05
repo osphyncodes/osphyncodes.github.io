@@ -235,7 +235,15 @@ tbody:nth-child(even) {
   padding: 10px;
   color: white;
   border-radius: 5px;
-  width: 117px;
+  width: 122px;
+}
+
+.refreshments-distribution-table button:hover{
+  font-weight: bold;
+}
+
+.refreshment-buttons{
+  background: green;
 }
 
 .refreshments-distribution h1 {

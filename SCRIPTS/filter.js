@@ -80,7 +80,122 @@ const setSessionContainer = document.querySelector('.set-session-container')
 
   openBtn.addEventListener('click', () => {
     dstContainer.style.display = 'block'
+    distributeRefreshments()
   })
+
+  function distributeRefreshments() {
+    getSessionName(TC.SessionHome.valIdStore.innerHTML)
+
+    //if (sessionName) {
+      if(sessionName !== undefined){
+        ckDB =   signInDatabase[SessionIndex][sessionName]
+      } else {
+        ckDB =[]
+      }
+
+
+      let row;
+      let tcNum;
+      let fullName;
+      let age;
+      let sex;
+      let roa;
+      let status;
+      let tc
+
+      const tableContainer = document.getElementById('refreshTableBody');
+
+      tableContainer.innerHTML = ''
+
+      ckDB.forEach((value, index) => {
+        row = document.createElement('tr');
+
+        tcNum = document.createElement('td');
+        fullName = document.createElement('td');
+        age = document.createElement('td');
+        sex = document.createElement('td');
+        roa = document.createElement('td');
+        status = document.createElement('td');
+
+
+        tcNum.innerHTML = value.tcNumber
+
+        //full name
+        tc = value.tcNumber
+
+        for (let index = 0; index < tcDatabase.length; index++) {
+          const element = tcDatabase[index];
+          if(tc == element.TcNumber){
+            fullName.textContent = element.Name
+            sex.textContent = element.Gender
+            break
+          } 
+        }
+
+        age.textContent = value.age;
+        roa.textContent = value.reasonOfAttendance
+
+        //button creation
+        const btn = document.createElement('button')
+        btn.textContent = value.refreshButton
+
+        if (btn.textContent == 'Recieved') {
+          btn.style.background = 'green'
+          btn.disabled = false
+        }
+
+        btn.addEventListener('click', () => {
+          if (btn.textContent == 'Not Recieved') {
+            btn.textContent = 'Recieved'
+            btn.style.background = 'green'
+            btn.disabled = false;
+
+            getSessionName(TC.SessionHome.valIdStore.innerHTML)
+
+            //if (sessionName) {
+              if(sessionName !== undefined){
+                ckDB =   signInDatabase[SessionIndex][sessionName]
+              } else {
+                ckDB =[]
+              }
+
+              ckDB[index].refreshButton = 'Recieved'
+          } else {
+
+            let checks;
+
+            console.log(index);
+
+            btn.textContent = 'Not Recieved'
+            btn.style.background = 'rgb(197, 78, 27)'
+
+            getSessionName(TC.SessionHome.valIdStore.innerHTML)
+
+            //if (sessionName) {
+              if(sessionName !== undefined){
+                ckDB =   signInDatabase[SessionIndex][sessionName]
+              } else {
+                ckDB =[]
+              }
+
+              ckDB[index].refreshButton = 'Not Recieved'
+          }
+          
+        })
+
+        status.appendChild(btn)
+
+        row.appendChild(tcNum)
+        row.appendChild(fullName)
+        row.appendChild(age)
+        row.appendChild(sex)
+        row.appendChild(roa)
+        row.appendChild(status)
+
+        tableContainer.appendChild(row)   
+      })
+      
+  }
 
 
 
@@ -94,10 +209,9 @@ const setSessionContainer = document.querySelector('.set-session-container')
     newSessionContainer.style.display = 'none';
     sessionHomePage.style.display = 'block'
     SessionHomeLoad();
+    refreshHomePage();
     //openHtmlFile('/HTML/homePage.html');
   })
-
-
 
 
 // showing set session popup and populating select options========================================================================================================================================================

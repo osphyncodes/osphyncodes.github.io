@@ -1,6 +1,6 @@
 const Myform = TC.NewSession.frmSignInForm.FormName
 
-const signInArray = ['tcNumber','age', 'sbyPhone', 'sbyText', 'sbyWhatsapp','sbyHome', 'sbyNone', 'newInTeenClub', 'reasonOfAttendance']
+const signInArray = ['tcNumber','age', 'sbyPhone', 'sbyText', 'sbyWhatsapp','sbyHome', 'sbyNone', 'newInTeenClub', 'reasonOfAttendance','refreshButton']
 
 
 
@@ -52,6 +52,7 @@ Myform.addEventListener('submit', (element) => {
   const ModeOfSupport = TC.NewSession.frmSignInForm.FormFieldNames.ModeOfSupport
   const NewTeen = TC.NewSession.frmSignInForm.FormFieldNames.NewTeen
   const reasonOfAttendance = TC.NewSession.frmSignInForm.FormFieldNames.ReasonOfAttendance
+  const refreshButton = 'Not Recieved'
 
 
   const tcNum = JSON.parse(localStorage.getItem('SearchedTCNum'))
@@ -107,6 +108,7 @@ Myform.addEventListener('submit', (element) => {
 
     signInValues.push(Myform[NewTeen].value);
     signInValues.push(Myform[reasonOfAttendance].value);
+    signInValues.push(refreshButton)
 
     let i = -1;
     // function submitFormData () {
@@ -148,6 +150,8 @@ Myform.addEventListener('submit', (element) => {
       refreshTable();
       TC.NewSession.elNsSearchInput.focus();
       popMessage('Teen has been submitted successfully.')
+
+      console.log(signInDatabase)
     // }
   } else {
     popMessage('The Data has already been entered');

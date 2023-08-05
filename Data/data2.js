@@ -140,3 +140,38 @@ const resetForm = function(formID = '') {
         }
     }
 }
+
+const ConfMSG = function(Message = '', dFunction = () => {}) {
+  const confirmationContainer = document.querySelectorAll('.confirmation-message-container')
+  const clickedYes = document.querySelectorAll('.confirmation-button-yes')
+  const clickedNo = document.querySelectorAll('.confirmation-button-no')
+  const confMessage = document.querySelectorAll('.confirmation-message')
+
+
+  confMessage.forEach((element) => {
+    element.innerHTML = Message
+  })
+
+  confirmationContainer.forEach((element) => {
+    element.style.display = 'flex'
+  })
+
+  clickedYes.forEach((value) => {
+    value.addEventListener('click', () => {
+      dFunction();
+
+      confirmationContainer.forEach((value) => {
+        value.style.display = 'none'
+      })
+
+    })
+  })
+
+  clickedNo.forEach((element) => {
+    element.addEventListener('click', () => {
+      confirmationContainer.forEach((value) => {
+        value.style.display = 'none'
+      })
+    })
+  })
+}

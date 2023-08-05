@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TeenClub DMS</title>
   <link rel="stylesheet" href="/TESTING FILES/styles.css">
   <link rel="stylesheet" href="/CSS/session.css">
   <link rel="stylesheet" href="/CSS/index.css">
@@ -68,7 +68,7 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="refreshTableBody">
           <tr>
             <td>01</td>
             <td>Josephy Ng'omba</td>
@@ -76,98 +76,6 @@
             <td>Female</td>
             <td>Support</td>
             <td><button>Not Recieved</button></td>
-          </tr>
-
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Josephy Ng'omba</td>
-            <td>25</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Josephy Ng'omba</td>
-            <td>25</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Josephy Ng'omba</td>
-            <td>25</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Recieved</button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Josephy Ng'omba</td>
-            <td>25</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Recieved</button></td>
-          </tr>
-
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>Josephy Ng'omba</td>
-            <td>25</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Not Recieved</button></td>
-          </tr>
-
-          <tr>
-            <td>02</td>
-            <td>Haroon Chalimba</td>
-            <td>22</td>
-            <td>Female</td>
-            <td>Support</td>
-            <td><button>Recieved</button></td>
           </tr>
         </tbody>
       </table>
@@ -230,11 +138,18 @@
           <!--Showing teens attended and newly enrolled on teen club-->
           <div class="top-section">
               <div class="left-section">
-                <div id="shTeensAttended" class="total-teens">
-                    Teens Attended: 45
+
+                <div style="display: flex; gap: 5px;">
+                  <div>Teens Attended:</div>
+                  <div id="shTeensAttended" class="total-teens">
+                    
+                  </div>
                 </div>
-                <div id="shNewlyEnrolled" class="new-on-teen-club">
-                    Newly Enrolled: 02
+
+                <div style="display: flex; gap: 5px;">
+                  <div>Newly Enrolled:</div>
+                  <div id="shNewlyEnrolled"   class="new-on-teen-club">
+                  </div>
                 </div>
               </div>
 
@@ -258,7 +173,7 @@
                         <div>Phone</div>
                       </div>
                       <div id="mcPhone" class="value-label">
-                        25
+                        0
                       </div>
                     </div>
 
@@ -268,7 +183,7 @@
                         Text
                       </div>
                       <div id="mcText" class="value-label">
-                        2
+                        0
                       </div>
                     </div>
 
@@ -278,7 +193,7 @@
                         WhatsApp
                       </div>
                       <div id="mcWhatsapp" class="value-label">
-                        230
+                        0
                       </div>
                     </div>
 
@@ -288,7 +203,7 @@
                         Home
                       </div>
                       <div id="mcHome" class="value-label">
-                        253
+                        0
                       </div>
                     </div>
 
@@ -298,7 +213,7 @@
                         None
                       </div>
                       <div id="mcNone" class="value-label">
-                        78
+                        0
                       </div>
                     </div>
 
@@ -316,7 +231,7 @@
                     <div>Support</div>
                   </div>
                   <div id="roaSupport" class="value-label">
-                    25
+                    0
                   </div>
                 </div>
               </div>  
@@ -327,7 +242,7 @@
                     Clinic
                   </div>
                   <div id="roaClinic" class="value-label">
-                    2
+                    0
                   </div>
                 </div>
             </div>
@@ -344,7 +259,7 @@
                     <div>Male(10 - 14 Yrs)</div>
                   </div>
                   <div id="asMale1014" class="value-label">
-                    40
+                    0
                   </div>
                 </div>
 
@@ -354,7 +269,7 @@
                     Female(10 - 14 Yrs)
                   </div>
                   <div id="asFemale1014" class="value-label">
-                    2
+                    0
                   </div>
                 </div>
 
@@ -364,7 +279,7 @@
                     Male(15 - 18 Yrs)
                   </div>
                   <div id="asMale1518" class="value-label">
-                    230
+                    0
                   </div>
                 </div>
 
@@ -374,7 +289,7 @@
                     Female(15 - 18 Yrs)
                   </div>
                   <div id="asFemale1518" class="value-label">
-                    253
+                    0
                   </div>
                 </div>
 
@@ -384,7 +299,7 @@
                     Male(19+ Yrs)
                   </div>
                   <div id="asMale19+" class="value-label">
-                    78
+                    0
                   </div>
                 </div>
 
@@ -394,7 +309,7 @@
                     Female(19+ Yrs)
                   </div>
                   <div id="asFemale19+" class="value-label">
-                    78
+                    0
                   </div>
                 </div>
 
