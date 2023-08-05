@@ -106,9 +106,7 @@
 
   sessionCount();
 
-    const refreshHomePage = function() {
-      
-
+    function refreshHomePage () {
         let teenAttended;
         let newlyEnrolled = 0;
         let guardianSession = 0;
@@ -328,6 +326,7 @@
       popMessage('Sorry, there are no sessions to delete.')
     } else {
       ConfMSG('Are you sure you want to delete the selected session?',deleteSession);
+      TC.NewSession.NsTable.Body.innerHTML = '';
     }
   })
 
